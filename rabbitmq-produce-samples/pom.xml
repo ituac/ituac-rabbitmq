@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.ituac</groupId>
+    <artifactId>itauc-rabbitmq</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>rabbitmq-produce-samples</artifactId>
+  <packaging>pom</packaging>
+  <name>rabbitmq-produce-samples</name>
+  <description>rabbitmq-produce-samples生产示例</description>
+  
+  <modules>
+  	<module>rabbitmq-produce-samples-spring</module>
+  	<module>rabbitmq-produce-samples-springboot</module>
+  </modules>
+  
+  <dependencies>
+  	<!-- 消息体、基础依赖 -->
+  	<dependency>
+  		<groupId>org.ituac</groupId>
+  		<artifactId>rabbitmq-interfaces</artifactId>
+ 	</dependency>
+  </dependencies>
+</project>
