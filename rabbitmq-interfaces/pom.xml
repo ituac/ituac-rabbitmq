@@ -11,7 +11,19 @@
   <version>${ituac.rabbitmq.version}</version>
   <description>rabbitmq-interfaces生产消费者桥梁</description>
   
-  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.10</version>
+  	</dependency>
+  	<!-- common -->
+	<dependency>
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	    <version>2.6</version>
+	</dependency>
+  </dependencies>
   
   
 </project>

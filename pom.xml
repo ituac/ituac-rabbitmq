@@ -33,7 +33,7 @@
 		<ituac.rabbitmq.version>1.0.1</ituac.rabbitmq.version>
 
 		<spring.version>4.3.25.RELEASE</spring.version>
-		<spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+		<spring-boot.version>2.2.0.RELEASE</spring-boot.version>
 		<mybatis-spring-boot-starter.version>1.3.5</mybatis-spring-boot-starter.version>
 		<mysql-connector-java.version>5.1.48</mysql-connector-java.version>
 
