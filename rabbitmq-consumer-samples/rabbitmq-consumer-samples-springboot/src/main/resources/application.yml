@@ -1,0 +1,30 @@
+server:
+  port: 2001
+
+spring:
+  application: 
+    name: rabbit-consumer-springboot
+  rabbitmq:
+    username: rabbit
+    password: 123456
+    port: 5672
+    addresses: 127.0.0.1
+    virtual-host: /
+    cache:
+      channel:
+        size: 25
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+      simple:
+        #指定最小的消费者数量.
+        concurrency: 2
+        #指定最大的消费者数量.
+        max-concurrency: 2
+        #开启ack
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+            #支持消息的确认与返回
+      template:
+        mandatory: true
