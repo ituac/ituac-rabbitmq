@@ -16,6 +16,7 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 /**
  * Rabbit 队列配置类
@@ -23,6 +24,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@Order(1)	//配置加载顺序优先级
 public class RabbitQueueConfig extends BaseMqConfig {
 	
 	@Resource
@@ -156,5 +158,7 @@ public class RabbitQueueConfig extends BaseMqConfig {
 	Binding bindingExchangeGz(@Qualifier("issueGzFanoutQueue") Queue queue, @Qualifier("fanoutCityExchange") Exchange exchange) {
 	    return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_ALL_CITY_ISSUE).noargs();
 	}
+
+	
 	
 }

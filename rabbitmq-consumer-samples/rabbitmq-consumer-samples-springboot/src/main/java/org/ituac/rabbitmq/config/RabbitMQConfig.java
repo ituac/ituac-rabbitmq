@@ -22,6 +22,7 @@ public class RabbitMQConfig {
         factory.setConnectionFactory(connectionFactory);
         factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
         factory.setMessageConverter(new Jackson2JsonMessageConverter());
+        factory.setDefaultRequeueRejected(false);
         return factory;
     }
 

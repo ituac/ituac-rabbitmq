@@ -2,7 +2,6 @@ package org.ituac.rabbitmq;
 
 
 import java.util.UUID;
-
 import org.itauc.rabbitmq.config.BaseMqConfig;
 import org.itauc.rabbitmq.message.CityMq;
 import org.itauc.rabbitmq.message.MessageMq;
@@ -24,6 +23,8 @@ public class Sender extends BaseMqConfig{
 	@Autowired
     private RabbitTemplate rabbitTemplate;
 	
+	
+	
 	/* ---------------------------------------------------- Direct 形式 -------------------------------------------- */
 	
 	/**
@@ -38,6 +39,8 @@ public class Sender extends BaseMqConfig{
 	
 	
 	
+	
+	
 	/* ---------------------------------------------------- Topic 形式 -------------------------------------------- */
 	
 	/**
@@ -49,6 +52,11 @@ public class Sender extends BaseMqConfig{
         UserMq user = (UserMq) o;
 		this.rabbitTemplate.convertAndSend(TOPIC_EXCHANGE_USER_ISSUE, ROUTING_KEY_USER_ISSUE, user,correlationData);
 	}
+	
+	
+	
+	
+	
 	
 	
 	/* ---------------------------------------------------- Fanout 形式 -------------------------------------------- */

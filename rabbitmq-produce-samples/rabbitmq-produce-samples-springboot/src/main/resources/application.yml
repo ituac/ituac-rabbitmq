@@ -10,6 +10,11 @@ spring:
     port: 5672
     addresses: 127.0.0.1
     virtual-host: /
+    #username: rabbit
+    #password: 123456
+    #port: 5672
+    #addresses: 101.200.36.104
+    #virtual-host: rabbit
     #开启发送失败返回
     publisher-returns: true
     #开启发送确认
@@ -22,6 +27,11 @@ spring:
         max-concurrency: 2
         #开启ack
         acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 5000
+        default-requeue-rejected: false
       #开启ack
       direct:
         acknowledge-mode: manual

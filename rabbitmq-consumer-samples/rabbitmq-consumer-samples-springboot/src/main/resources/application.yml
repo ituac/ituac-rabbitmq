@@ -1,6 +1,7 @@
 server:
   port: 2001
 
+
 spring:
   application: 
     name: rabbit-consumer-springboot
@@ -23,6 +24,14 @@ spring:
         max-concurrency: 2
         #开启ack
         acknowledge-mode: manual
+        retry:
+          multiplier: 2
+          stateless: true
+          enabled: true
+          # 最大重试次数
+          max-attempts: 6
+          initial-interval: 1000
+        default-requeue-rejected: false
       direct:
         acknowledge-mode: manual
             #支持消息的确认与返回
