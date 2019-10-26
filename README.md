@@ -10,7 +10,7 @@
 
 ##### 模块概述如下：
 
-> ituac-rabbitmq：项目名称父工程
+ituac-rabbitmq：项目名称父工程
 rabbitmq-consumer-samples：消费者模块父工程
 rabbitmq-consumer-samples-spring：spring消费者版本
 rabbitmq-consumer-samples-springboot：springboot消费者版本
