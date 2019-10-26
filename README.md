@@ -6,18 +6,14 @@
 
 ### 项目整体模块
 
-![rabbitMq项目模块](https://blog-ituac-1252741530.cos.ap-beijing.myqcloud.com/rabbitmq_1572079569051.png)
-
-##### 模块概述如下：
-
-ituac-rabbitmq：项目名称父工程
-rabbitmq-consumer-samples：消费者模块父工程
-rabbitmq-consumer-samples-spring：spring消费者版本
-rabbitmq-consumer-samples-springboot：springboot消费者版本
-rabbitmq-interfaces： 公共实体、配置
-rabbitmq-produce-samples：生产者模块父工程
-rabbitmq-produce-samples-spring：spring生产者版本
-rabbitmq-produce-samples-springboot：springboot生产者版本
+--ituac-rabbitmq：项目名称父工程
+----rabbitmq-consumer-samples：消费者模块父工程
+--------rabbitmq-consumer-samples-spring：spring消费者版本
+--------rabbitmq-consumer-samples-springboot：springboot消费者版本
+----rabbitmq-interfaces： 公共实体、配置
+----rabbitmq-produce-samples：生产者模块父工程
+--------rabbitmq-produce-samples-spring：spring生产者版本
+--------rabbitmq-produce-samples-springboot：springboot生产者版本
 
 
 ### 功能提供
