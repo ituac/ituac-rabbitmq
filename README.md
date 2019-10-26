@@ -6,13 +6,13 @@
 
 ### 项目整体模块
 
---ituac-rabbitmq：项目名称父工程
-----rabbitmq-consumer-samples：消费者模块父工程
---------rabbitmq-consumer-samples-spring：spring消费者版本
---------rabbitmq-consumer-samples-springboot：springboot消费者版本
-----rabbitmq-interfaces： 公共实体、配置
-----rabbitmq-produce-samples：生产者模块父工程
---------rabbitmq-produce-samples-spring：spring生产者版本
+--ituac-rabbitmq：项目名称父工程<br/>
+----rabbitmq-consumer-samples：消费者模块父工程<br/>
+--------rabbitmq-consumer-samples-spring：spring消费者版本<br/>
+--------rabbitmq-consumer-samples-springboot：springboot消费者版本<br/>
+----rabbitmq-interfaces： 公共实体、配置<br/>
+----rabbitmq-produce-samples：生产者模块父工程<br/>
+--------rabbitmq-produce-samples-spring：spring生产者版本<br/>
 --------rabbitmq-produce-samples-springboot：springboot生产者版本
 
 
