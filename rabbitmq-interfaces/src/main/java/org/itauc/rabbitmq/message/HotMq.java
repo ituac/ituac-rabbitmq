@@ -21,4 +21,35 @@ public class HotMq implements Serializable{
 	
 	private int like;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescp() {
+		return descp;
+	}
+
+	public void setDescp(String descp) {
+		this.descp = descp;
+	}
+
+	public int getLike() {
+		return like;
+	}
+
+	public void setLike(int like) {
+		this.like = like;
+	}
 }
