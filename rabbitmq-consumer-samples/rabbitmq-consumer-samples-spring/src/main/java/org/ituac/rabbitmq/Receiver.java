@@ -142,6 +142,6 @@ public class Receiver extends BaseMqConfig {
         	
         }
     }
-    
+
 
 }
