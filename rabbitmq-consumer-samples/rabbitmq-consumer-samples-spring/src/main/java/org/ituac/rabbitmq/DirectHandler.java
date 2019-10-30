@@ -1,12 +1,13 @@
 package org.ituac.rabbitmq;
 
-import java.io.IOException;
-
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class DirectHandler implements MessageListener {
 
@@ -15,10 +16,12 @@ public class DirectHandler implements MessageListener {
     public void onMessage(Message msg) {
         //msg就是rabbitmq传来的消息
         // 使用jackson解析
-            /*JsonNode jsonData = MAPPER.readTree(msg.getBody());
-            System.out.println("id======" + jsonData.get("id").asText()
-                    + ",name======" + jsonData.get("name").asText());*/
-        System.out.println(new String(msg.getBody()));
+        try {
+            JsonNode jsonData =  MAPPER.readTree(msg.getBody());
+            System.out.println("content======" + jsonData.get("content").asText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
