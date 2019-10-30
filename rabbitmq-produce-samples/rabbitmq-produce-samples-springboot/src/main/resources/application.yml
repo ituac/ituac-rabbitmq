@@ -5,16 +5,16 @@ spring:
   application: 
     name: rabbit-produce-springboot
   rabbitmq:
-    username: rabbit
+#    username: rabbit
+#    password: 123456
+#    port: 5672
+#    addresses: 127.0.0.1
+#    virtual-host: /
+    username: server
     password: 123456
     port: 5672
-    addresses: 127.0.0.1
+    addresses: 101.200.36.104
     virtual-host: /
-    #username: rabbit
-    #password: 123456
-    #port: 5672
-    #addresses: 101.200.36.104
-    #virtual-host: rabbit
     #开启发送失败返回
     publisher-returns: true
     #开启发送确认
