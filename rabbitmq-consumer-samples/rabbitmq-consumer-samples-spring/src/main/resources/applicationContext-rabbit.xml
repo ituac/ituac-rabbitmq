@@ -18,18 +18,57 @@
 
     <!-- 声明队列 -->
     <rabbit:queue name="direct.queue.message.issue" auto-declare="true" durable="true"/>
-    <!--<rabbit:queue name="routing.key_message_issue" auto-declare="true" durable="true" />-->
+
+    <rabbit:queue name="topic.queue.message.issue" auto-declare="true" durable="true"/>
+
+    <rabbit:queue name="fanout.queue.bj.issue" auto-declare="true" durable="true"/>
+    <rabbit:queue name="fanout.queue.sh.issue" auto-declare="true" durable="true"/>
+    <rabbit:queue name="fanout.queue.gz.issue" auto-declare="true" durable="true"/>
+
+    <rabbit:queue name="tt.dead.letter.queue" auto-declare="true" durable="true"/>
+    <rabbit:queue name="tt.ituac.mail.queue.letter" auto-declare="true" durable="true"/>
+
+    <rabbit:queue name="ae.ituac.source.hot.queue.issue" auto-declare="true" durable="true"/>
+    <rabbit:queue name="ae.ituac.back.hot.queue.issue" auto-declare="true" durable="true"/>
 
     <!-- 定义消费者 -->
-    <bean name="directHandler" class="org.ituac.rabbitmq.DirectHandler"/>
-    <!--<bean name="pigHandler" class="com.debo.rabbitmq.PigHandler" />-->
+    <bean name="andunDirectMessageReceiver" class="org.ituac.rabbitmq.AndunDirectMessageReceiver"/>
+    <bean name="andunTopicMessageReceiver" class="org.ituac.rabbitmq.AndunTopicMessageReceiver"/>
+    <bean name="andunFanoutBj" class="org.ituac.rabbitmq.AndunFanoutBJReceiver"/>
+    <bean name="andunFanoutSh" class="org.ituac.rabbitmq.AndunFanoutSHReceiver"/>
+    <bean name="andunFanoutGz" class="org.ituac.rabbitmq.AndunFanoutGZReceiver"/>
+
+    <bean name="andunTTDead" class="org.ituac.rabbitmq.AndunTTDeadReceiver"/>
+    <bean name="andunTTMail" class="org.ituac.rabbitmq.AndunTTMailReceiver"/>
+
+    <bean name="andunACSource" class="org.ituac.rabbitmq.AndunACSourceReceiver"/>
+    <bean name="andunACBack" class="org.ituac.rabbitmq.AndunACBackReceiver"/>
+
 
     <bean id="jsonMessageConverter"
           class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter"></bean>
+
     <!-- 定义消费者监听队列 -->
     <rabbit:listener-container
             connection-factory="connectionFactory" message-converter="jsonMessageConverter">
-        <rabbit:listener ref="directHandler" queues="direct.queue.message.issue" />
+        <!--"processDirectMessage"-->
+
+        <rabbit:listener ref="andunDirectMessageReceiver" queues="direct.queue.message.issue" method="onMessageTest"/>
+        <rabbit:listener ref="andunTopicMessageReceiver" queues="topic.queue.message.issue"/>
+
+
+        <rabbit:listener ref="andunFanoutBj" queues="fanout.queue.bj.issue"/>
+        <rabbit:listener ref="andunFanoutSh" queues="fanout.queue.sh.issue"/>
+        <rabbit:listener ref="andunFanoutGz" queues="fanout.queue.gz.issue"/>
+
+
+        <rabbit:listener ref="andunTTDead" queues="tt.dead.letter.queue"/>
+        <rabbit:listener ref="andunTTMail" queues="tt.ituac.mail.queue.letter"/>
+
+
+        <rabbit:listener ref="andunACSource" queues="ae.ituac.source.hot.queue.issue"/>
+        <rabbit:listener ref="andunACBack" queues="ae.ituac.back.hot.queue.issue"/>
+
     </rabbit:listener-container>
 
 </beans>

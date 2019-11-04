@@ -1,3 +1,4 @@
+/*
 package org.ituac.rabbitmq.config;
 
 import org.springframework.amqp.core.AcknowledgeMode;
@@ -8,10 +9,12 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+*/
 /**
  * @author ituac
  *
- */
+ *//*
+
 
 @Configuration
 public class RabbitMQConfig {
@@ -27,3 +30,4 @@ public class RabbitMQConfig {
     }
 
 }
+*/
